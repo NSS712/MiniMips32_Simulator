@@ -19,7 +19,7 @@ CFLAGS := -I$(INCLUDE_DIR) -I$(INCLUDE_DIR)/cpu -I$(INCLUDE_DIR)/memory -I$(INCL
 LDFLAGS := -lreadline
 
 # Files to be compiled
-SRCS := $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/memory/*.c) $(wildcard $(SRC_DIR)/cpu/*.c) $(wildcard $(SRC_DIR)/monitor/*.c)
+SRCS := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/memory/*.cpp) $(wildcard $(SRC_DIR)/cpu/*.cpp) $(wildcard $(SRC_DIR)/monitor/*.cpp)
 
 TEMU_TARGET := temu
 
@@ -37,7 +37,7 @@ export	BUILD_DIR
 
 $(BUILD_DIR)$(TEMU_TARGET): 
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SRCS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SRCS) /usr/lib/x86_64-linux-gnu/libreadline.so
 	@git commit --allow-empty -q -m "compile"
 
 run: $(BUILD_DIR)$(TEMU_TARGET)

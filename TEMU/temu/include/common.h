@@ -11,7 +11,7 @@
 #include <assert.h>
 #include <string.h>
 
-typedef uint8_t bool;
+//typedef uint8_t bool;
 
 #pragma pack (1)
 typedef union {

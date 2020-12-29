@@ -1,0 +1,26 @@
+#ifndef CHANGUI_H
+#define CHANGUI_H
+
+#include <QLabel>
+
+class ChangeUI
+{
+public:
+    ChangeUI();
+    void startChange();
+
+public:
+    /*
+     * 定义几个QLabel指针
+     * 这个是将mainwindow中的控件指针赋值给他们的
+     * 就是将 m_q1 = ui->Q1(在mainwindow中进行)
+     *
+     */
+    QLabel*     m_q1;
+    QLabel*     m_q2;
+    QLabel*     m_q3;
+    
+};
+
+
+#endif // CHANGUI_H
